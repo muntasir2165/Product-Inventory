@@ -38,6 +38,12 @@
     <!-- Label for editor overflow menu option that deletes the current product [CHAR LIMIT=20] -->
     <string name="action_delete">Delete</string>
 
+    <!-- Toast message in editor when new product has failed to be added [CHAR LIMIT=NONE] -->
+    <string name="new_product_addition_failed">Product cannot be saved without updating ALL the fields</string>
+
+    <!-- Toast message in editor when existing product has failed to be updated [CHAR LIMIT=NONE] -->
+    <string name="exiting_product_update_failed">Product cannot be updated with one or more empty fields</string>
+
     <!-- Toast message in editor when new product has been successfully inserted [CHAR LIMIT=NONE] -->
     <string name="editor_insert_product_successful">Product saved</string>
 
@@ -75,7 +81,10 @@
     <string name="cancel">Cancel</string>
 
     <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
-    <string name="category_overview">Product Overview</string>
+    <string name="category_overview">Product Overview </string>
+
+    <!-- Label for letting the user know that all fields are mandatory [CHAR LIMIT=30] -->
+    <string name="mandatory_fields_label">ALL the below fields are mandatory to add or update a product</string>
 
     <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
     <string name="hint_product_name">Name</string>
@@ -112,11 +121,4 @@
 
     <!-- Label for the quantity of the product [CHAR LIMIT=20] -->
     <string name="quantity_label">Quantity:</string>
-
-    <!-- Label for the supplier name of the product [CHAR LIMIT=20] -->
-    <string name="supplier_name_label">Supplier:</string>
-
-    <!-- Label for the supplier phone number of the product [CHAR LIMIT=20] -->
-    <string name="supplier_phone_number_label">Contact Supplier:</string>
-
 </resources>

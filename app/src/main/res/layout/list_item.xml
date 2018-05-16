@@ -46,22 +46,6 @@
         android:fontFamily="sans-serif"
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="#AEB6BD"  />
-
-    <TextView
-        android:id="@+id/product_supplier_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:textColor="#AEB6BD"  />
-
-    <TextView
-        android:id="@+id/product_supplier_phone_number_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:textColor="#AEB6BD"  />
     </LinearLayout>
 
     <RelativeLayout
@@ -73,6 +57,7 @@
             android:id="@+id/sale_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="96dp"
             android:text="@string/product_sale"
             android:focusable="false"
             android:focusableInTouchMode="false"/>

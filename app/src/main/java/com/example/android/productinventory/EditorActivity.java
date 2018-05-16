@@ -150,11 +150,26 @@ public class EditorActivity extends AppCompatActivity implements
         // Check if this is supposed to be a new product
         // and check if all the fields in the editor are blank
         if (mCurrentProductUri == null &&
-                TextUtils.isEmpty(nameString) && TextUtils.isEmpty(priceString) &&
-                TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(supplierNameString) &&
-                TextUtils.isEmpty(supplierPhoneNumberString)) {
-            // Since no fields were modified, we can return early without creating a new product.
+                (TextUtils.isEmpty(nameString) || TextUtils.isEmpty(priceString) ||
+                TextUtils.isEmpty(quantityString) || TextUtils.isEmpty(supplierNameString) ||
+                TextUtils.isEmpty(supplierPhoneNumberString))) {
+            // Since not ALL fields were modified, we can return early without creating a new product.
             // No need to create ContentValues and no need to do any ContentProvider operations.
+            Toast.makeText(this, getString(R.string.new_product_addition_failed),
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Check if this is supposed to be an existing product being updated
+        // and check if all the fields in the editor are blank
+        if (mCurrentProductUri != null &&
+                (TextUtils.isEmpty(nameString) || TextUtils.isEmpty(priceString) ||
+                        TextUtils.isEmpty(quantityString) || TextUtils.isEmpty(supplierNameString) ||
+                        TextUtils.isEmpty(supplierPhoneNumberString))) {
+            // Since one or more fields are empty, we can return early without updating the product.
+            // No need to create ContentValues and no need to do any ContentProvider operations.
+            Toast.makeText(this, getString(R.string.exiting_product_update_failed),
+                    Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -475,5 +490,12 @@ public class EditorActivity extends AppCompatActivity implements
         String supplierPhoneNumber = mSupplierPhoneNumberEditText.getText().toString().trim();
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", supplierPhoneNumber, null));
         startActivity(intent);
+    }
+
+    /**
+     * Helper method to delete product from inventory
+     */
+    public void deleteProductFromInventory(View v) {
+        deleteProduct();
     }
 }

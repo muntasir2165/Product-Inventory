@@ -27,7 +27,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/category_overview" />
+            android:text="@string/category_overview"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/mandatory_fields_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mandatory_fields_label"
+            android:gravity="center"
+            android:textColor="@color/mandatory_fields_textColor"/>
 
         <!-- Input fields -->
 
@@ -96,4 +105,14 @@
         android:gravity="center"
         android:onClick="callProductSupplier"
         android:text="@string/call_product_supplier" />
+
+    <Button
+        android:id="@+id/product_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="deleteProductFromInventory"
+        android:background="@drawable/baseline_delete_forever_black_48" />
 </LinearLayout>

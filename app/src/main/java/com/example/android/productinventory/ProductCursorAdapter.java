@@ -78,33 +78,23 @@ public class ProductCursorAdapter extends CursorAdapter {
         TextView nameTextView = (TextView) view.findViewById(R.id.product_name_text_view);
         TextView priceTextView = (TextView) view.findViewById(R.id.product_price_text_view);
         TextView quantityTextView = (TextView) view.findViewById(R.id.product_quantity_text_view);
-        TextView supplierNameTextView = (TextView) view.findViewById(R.id.product_supplier_name_text_view);
-        TextView supplierPhoneNumberTextView = (TextView) view.findViewById(R.id.product_supplier_phone_number_text_view);
-
 
         // Find the columns of product attributes that we're interested in
         int idColumnIndex = cursor.getColumnIndex(ProductEntry._ID);
         int nameColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_NAME);
         int priceColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_PRICE);
         int quantityColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_QUANTITY);
-        int supplierNameColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_SUPPLIER_NAME);
-        int supplierPhoneNumberColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER);
-
 
         // Read the product attributes from the Cursor for the current product
         final int productId = cursor.getInt(idColumnIndex);
         String name = cursor.getString(nameColumnIndex);
         final String price = cursor.getString(priceColumnIndex);
         final String quantity = cursor.getString(quantityColumnIndex);
-        String supplierName = cursor.getString(supplierNameColumnIndex);
-        String supplierPhoneNumber = cursor.getString(supplierPhoneNumberColumnIndex);
 
         // Update the TextViews with the attributes for the current product
         nameTextView.setText(name);
         priceTextView.setText("$" + price);
         quantityTextView.setText(context.getResources().getString(R.string.quantity_label) + " " + quantity);
-        supplierNameTextView.setText(context.getResources().getString(R.string.supplier_name_label) + " " + supplierName);
-        supplierPhoneNumberTextView.setText(context.getResources().getString(R.string.supplier_phone_number_label) + " " + supplierPhoneNumber);
 
         Button saleButton = (Button) view.findViewById(R.id.sale_button);
         saleButton.setOnClickListener(new View.OnClickListener() {

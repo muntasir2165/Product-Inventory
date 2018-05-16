@@ -25,4 +25,8 @@
 
     <!-- Primary dark color for the editor -->
     <color name="editorColorPrimaryDark">#394450</color>
+
+
+    <!-- Color for the text to highlight that all fields are mandatory -->
+    <color name="mandatory_fields_textColor">#FF0000</color>
 </resources>
